@@ -1,10 +1,297 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-		<div>jsgdjags19849d</div>		
-	</body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    body {
+      background: #ccc;
+    }
+    #cvs {
+      box-shadow: 0 0 20px #333;
+      display: block;
+      margin: 20px auto 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="cvs" width="800" height="800"></canvas>
+  <script type="text/javascript">
+    
+    var canvas = document.getElementById('cvs');
+    var cvs = canvas.getContext('2d');
+             
+    //方法一:
+    //转起来
+//  var i=0;
+//  
+//   function doRound(){
+//   	
+//      i += 5;
+//      
+//     
+//   cvs.save();
+//   cvs.clearRect(0,0,800,800);
+//   cvs.translate(400,300); 
+//   cvs.beginPath();
+//   cvs.moveTo(0,0);
+//   cvs.lineTo(0,400);
+//   cvs.lineWidth=10;
+//   cvs.strokeStyle="white";
+//   cvs.stroke();
+//   
+//    cvs.rotate(Math.PI/180*(i%360));
+//      
+//  
+////  cvs.moveTo(0,0);   
+//  cvs.rotate(Math.PI/180*45);
+//
+//  /* 开始绘制风车叶的三角层 */
+//  cvs.beginPath();
+//  cvs.moveTo(0,0);
+//  cvs.lineTo(0,350);
+//
+//  //使用二次曲线绘制三角形有弧度的斜面
+//  cvs.quadraticCurveTo(120,240,140,0);
+//  
+//  cvs.lineTo(140,0);
+//  cvs.closePath();
+//  cvs.fillStyle = '#4dd556';
+//  cvs.fill();
+//  /* 结束绘制风车叶的三角层 */
+//
+//
+//  /* 开始绘制风车叶的三角层里面的圆弧层 */
+//  cvs.beginPath();
+//  cvs.moveTo(0,0);
+//  
+//  //使用二次曲线绘制圆弧
+//  cvs.quadraticCurveTo(200,150,0,350);
+//  
+//  cvs.closePath();
+//  cvs.fillStyle = 'black';
+//  cvs.fill();
+//
+//  /* 结束绘制风车叶的三角层里面的圆弧层 */
+// 
+// 
+// 
+// 
+// 
+// 
+//  //移动和旋转路径(2)
+//  cvs.translate(0,0);
+//  cvs.rotate(Math.PI/180*90);
+//
+//  /* 开始绘制风车叶的三角层 */
+//  cvs.beginPath();
+//  cvs.moveTo(0,0);
+//  cvs.lineTo(0,350);
+//
+//  //使用二次曲线绘制三角形有弧度的斜面
+//  cvs.quadraticCurveTo(120,240,140,0);
+//  
+//  cvs.lineTo(140,0);
+//  cvs.closePath();
+//  cvs.fillStyle = "blueviolet";
+//  cvs.fill();
+//  /* 结束绘制风车叶的三角层 */
+//
+//
+//  /* 开始绘制风车叶的三角层里面的圆弧层 */
+//  cvs.beginPath();
+//  cvs.moveTo(0,0);
+//  
+//  //使用二次曲线绘制圆弧
+//  cvs.quadraticCurveTo(200,150,0,350);
+//  
+//  cvs.closePath();
+//  cvs.fillStyle = 'crimson';
+//  cvs.fill();
+// 
+// 
+// 
+//  //移动和旋转路径(3)
+//
+//  cvs.translate(0,0);
+//  cvs.rotate(Math.PI/180*90);
+//
+//
+//  cvs.beginPath();
+//  cvs.moveTo(0,0);
+//  cvs.lineTo(0,350);
+//
+//  
+//  cvs.quadraticCurveTo(120,240,140,0);
+//  
+//  cvs.lineTo(140,0);
+//  cvs.closePath();
+//  cvs.fillStyle = "red";
+//  cvs.fill();
+// 
+//
+//
+//
+//  cvs.beginPath();
+//  cvs.moveTo(0,0);
+//  
+//
+//  cvs.quadraticCurveTo(200,150,0,350);
+//  
+//  cvs.closePath();
+//  cvs.fillStyle = '#46b346';
+//  cvs.fill();
+//
+// 
+// 
+// //移动和旋转路径(4)
+//  cvs.translate(0,0);
+//  cvs.rotate(Math.PI/180*90);
+//
+//
+//  cvs.beginPath();
+//  cvs.moveTo(0,0);
+//  cvs.lineTo(0,350);
+//
+//
+//  cvs.quadraticCurveTo(120,240,140,0);
+//  
+//  cvs.lineTo(140,0);
+//  cvs.closePath();
+//  cvs.fillStyle = "yellow";
+//  cvs.fill();
+//
+//
+//
+//  
+//  cvs.beginPath();
+//  cvs.moveTo(0,0);
+//  
+// 
+//  cvs.quadraticCurveTo(200,150,0,350);
+//  
+//  cvs.closePath();
+//  cvs.fillStyle = 'navajowhite';
+//  cvs.fill();
+//  cvs.beginPath();
+//  cvs.translate(0,0);
+//  cvs.fillStyle="white";
+//  cvs.arc(0,0,20,0,Math.PI/180*360);
+//  cvs.fill();
+// 
+//  cvs.restore();
+//    
+//  
+//  
+// 
+// 
+//  
+////      cvs.clearRect(0,0,800,800);
+//
+//      
+//              
+//      window.requestAnimationFrame(doRound);
+//    }
+// 
+//    window.requestAnimationFrame(doRound);
+      
+  
+  
+  
+  
+//方法二:
+//转起来
+    var p=0;
+    
+     function doRound(){
+     	
+        p += 5;
+        
+       
+     cvs.save();
+     cvs.clearRect(0,0,800,800);
+     cvs.translate(400,300); 
+     cvs.beginPath();
+     cvs.moveTo(0,0);
+     cvs.lineTo(0,400);
+     cvs.lineWidth=10;
+     cvs.strokeStyle="white";
+     cvs.stroke();
+     
+     cvs.rotate(Math.PI/180*(p%360));
+        
+   var arr1=["black","yellow","pink","brown"];
+    var arr2=["white","red","beige","darkblue"];
+//  cvs.moveTo(0,0);   
+for(var i=0;i<4;i++){
+	 
+	cvs.rotate(Math.PI/180*90);
+
+    /* 开始绘制风车叶的三角层 */
+    cvs.beginPath();
+    cvs.moveTo(0,0);
+    cvs.lineTo(0,350);
+
+    //使用二次曲线绘制三角形有弧度的斜面
+    cvs.quadraticCurveTo(120,240,140,0);
+    
+    cvs.lineTo(140,0);
+    cvs.closePath();
+    cvs.fillStyle = arr1[i];
+    cvs.fill();
+    /* 结束绘制风车叶的三角层 */
+
+
+    /* 开始绘制风车叶的三角层里面的圆弧层 */
+    cvs.beginPath();
+    cvs.moveTo(0,0);
+    
+    //使用二次曲线绘制圆弧
+    cvs.quadraticCurveTo(200,150,0,350);
+    
+    cvs.closePath();
+    cvs.fillStyle = arr2[i];
+    cvs.fill();
+    
+     cvs.beginPath();
+     cvs.fillStyle="white";
+     cvs.arc(0,0,20,0,Math.PI/180*360);
+     cvs.fill();
+    
+    
+}
+   
+
+    /* 结束绘制风车叶的三角层里面的圆弧层 */
+   
+   
+   
+   
+   
+   
+   
+    cvs.restore();
+      
+    
+    
+   
+   
+    
+
+        
+       
+         
+        window.requestAnimationFrame(doRound);
+      }
+   
+      window.requestAnimationFrame(doRound);
+   
+   
+   
+
+     
+      
+
+  </script>
+</body>
 </html>
