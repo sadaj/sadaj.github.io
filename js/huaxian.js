@@ -39,7 +39,7 @@ var mySwiper = new Swiper ('.swiper-container', {
 				c63_line();
 				break;
 			case 7:
-				// pageSeven();
+//				c71_line();
 				break;
 			case 8:
 			    c81_line();
@@ -123,7 +123,7 @@ var mySwiper = new Swiper ('.swiper-container', {
 			}
 		}, 5)
 	}
-//	c1_line1();
+
 
 	//画第二条线
 
@@ -147,7 +147,7 @@ jichu(c2,"c2",cvs2)
 		}, 5)
 
 	}
-//	c2_line2();
+
 	
 	
 
@@ -171,7 +171,7 @@ jichu(c3,"c3",cvs3)
 		}, 5)
 
 	}
-//	c3_line3();
+
 
 //第三页	
 var cvs31= c31.getContext('2d')
@@ -190,7 +190,7 @@ jichu(c31,"c31",cvs31)
 
 	}
 
-//	c3_line1();
+
 	
 	
 	
@@ -225,7 +225,7 @@ jichu(c41,"c41",cvs41)
 
 	}
 
-//	c4_line1();
+
 
 var cvs42 = c42.getContext('2d');
 jichu(c42,"c42",cvs42);
@@ -249,7 +249,7 @@ jichu(c42,"c42",cvs42);
 				
 	},5)	
 	}
-//c4_line2();
+
 
 var cvs43 = c43.getContext('2d');
 jichu(c43,"c43",cvs43);
@@ -272,7 +272,7 @@ jichu(c43,"c43",cvs43);
 	}
 	},5)	
 	}
-//c4_line3();
+
 
 //第五页	
 var cvs5 = c5.getContext('2d');
@@ -288,7 +288,7 @@ draWpoint(cvs5,320,60);
 }
 },5)
 }
-//c5_line();
+
 
 //第六页	
 var cvs61 = c61.getContext('2d');
@@ -312,7 +312,7 @@ draWpoint(cvs61,410,770);
 }
 },5)
 }
-//c61_line();
+
 
 
 var cvs62 = c62.getContext('2d');
@@ -334,7 +334,7 @@ if(y>=120 && y<=200){
 }
 },5)
 }
-//c62_line();
+
 
 var cvs63 = c63.getContext('2d');
 jichu(c63,"c63",cvs63);
@@ -356,6 +356,22 @@ if(x>=0 && x<=220){
 },5)
 }
 
+//第七页	
+//var cvs71 = c83.getContext('2d');
+//jichu(c71,"c71",cvs71);
+//function c71_line(){
+//	var x=196,y=0;
+//	var timer = setInterval(function(){
+//		if(y<177){
+//			y+=3;
+//			draWline(cvs71,196,0,196,y)
+//		}else{
+//			draWpoint(cvs71,196,177);
+//			clearInterval(timer)
+//		}
+//	},5)
+//}
+
 //第八页	
 var cvs81 = c81.getContext('2d');
 jichu(c81,"c81",cvs81);
@@ -376,7 +392,7 @@ if(x>=0 && x<=220){
 }
 },5)
 }
-//c81_line();
+
 var cvs82 = c82.getContext('2d');
 jichu(c82,"c82",cvs82);
 function c82_line(){
@@ -395,7 +411,7 @@ if(x>=420 && x<=639){
 }
 },5)
 }
-//c82_line()
+
 
 
 var cvs83 = c83.getContext('2d');
@@ -422,10 +438,6 @@ if(x>=420 && x<=639){
 }
 },5)
 }
-//c83_line()
-
-
-
 
 function jqId(id){
 	return document.getElementById(id);

@@ -30,92 +30,146 @@ window.onload=function(){
 
 
 	// canvas
-	var dele = document.getElementById("dele");
-	var bills = document.getElementById("bills");
-	var imgs = bills.getElementsByTagName("img");
-	var img7 = document.getElementById("img7");
-	var ca7 = document.getElementById("ca7");
-
-	img7.onclick=function(){
-		bills.style.display = "block";
-		ca7.style.zIndex = "15";
-		dele.style.display="block";
-	}
-
-	dele.onclick=function(){
-		dele.style.display="none";
-		ca7.style.zIndex = "12";
-		bills.style.display = "none";
-	}
-	var arr = [];
-	for (var i = 4; i < 17; i++) {
-		arr.push("img/bill/bill"+i+".jpg");
-	}
-//	 图片预加载
-	var imgarr = new Array();
-	function imgload(){
-		for (var i = 0; i < imgload.arguments.length; i++) {
-			imgarr[i] = new Image();
-			imgarr[i].src = imgload.arguments[i];
-		}
-	}
-	imgload(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6],arr[7],arr[8],arr[9],arr[10],arr[11],arr[12]);
-	ca7.width = window.innerWidth;
-	ca7.height = window.innerHeight;
-	var can7 = ca7.getContext("2d");
-	var a7=200,b7=230,rt=30;
-	var speen = 50,speen1=50;
-	var sign_img = new Image();
-	function hid(){
-		sign_img.onload=function(){
-			can7.beginPath();
-			can7.drawImage(sign_img,0,0,23,30,3,a7,23,30);
-			can7.fillStyle = "red";
-			can7.fillRect();
-			can7.fillRect(14,b7,1,ca7.height);
-		}
-		sign_img.src = 'img/sign.png';
-	}
-	hid();
-	touch.on(bills, 'touchstart', function(ev){
-		ev.preventDefault();
-	});
-	touch.on(bills, 'swiperight', function(ev){
-		a7-=speen;
-		b7-=speen1;
-		can7.clearRect(0,0,ca7.width,ca7.height);
-		hid();
-		add();
-	});
-	touch.on(bills, 'swipeleft', function(ev){
-		a7+=speen;
-		b7+=speen1;
-		can7.clearRect(0,0,ca7.width,ca7.height);
-		hid();
-		reduce();
-	});
-//	// 减少
-	var img_num=-1;
-	function reduce(){
-		img_num++;
-		console.log(img_num)
-		imgs[0].style.webkitAnimation = "img1 0.5s linear";
-		imgs[1].style.webkitAnimation = "img2 0.5s linear";
-		if (imgs.length>1) {
-			var timer=setTimeout(function(){
-				bills.removeChild(imgs[0]);
-				if (imgs.length>1) {
-					bills.appendChild(imgarr[img_num]);
-				}	
-			},500)
-		}
-	}
+//	var dele = document.getElementById("dele");
+//	var bills = document.getElementById("bills");
+//	var imgs = bills.getElementsByTagName("img");
+//	var img7 = document.getElementById("img7");
+//	var ca7 = document.getElementById("ca7");
+//
+//	img7.onclick=function(){
+//		bills.style.display = "block";
+//		ca7.style.zIndex = "15";
+//		dele.style.display="block";
+//	}
+//
+//	dele.onclick=function(){
+//		dele.style.display="none";
+//		ca7.style.zIndex = "12";
+//		bills.style.display = "none";
+//	}
+//	var arr = [];
+//	for (var i = 4; i < 17; i++) {
+//		arr.push("img/bill/bill"+i+".jpg");
+//	}
+////	 图片预加载
+//	var imgarr = new Array();
+//	function imgload(){
+//		for (var i = 0; i < imgload.arguments.length; i++) {
+//			imgarr[i] = new Image();
+//			imgarr[i].src = imgload.arguments[i];
+//		}
+//	}
+//	imgload(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6],arr[7],arr[8],arr[9],arr[10],arr[11],arr[12]);
+//	ca7.width = window.innerWidth;
+//	ca7.height = window.innerHeight;
+//	var can7 = ca7.getContext("2d");
+//	var a7=200,b7=230,rt=30;
+//	var speen = 50,speen1=50;
+//	var sign_img = new Image();
+//	function hid(){
+//		sign_img.onload=function(){
+//			can7.beginPath();
+//			can7.drawImage(sign_img,0,0,23,30,3,a7,23,30);
+//			can7.fillStyle = "red";
+//			can7.fillRect();
+//			can7.fillRect(14,b7,1,ca7.height);
+//		}
+//		sign_img.src = 'img/sign.png';
+//	}
+//	hid();
+//	touch.on(bills, 'touchstart', function(ev){
+//		ev.preventDefault();
+//	});
+//	touch.on(bills, 'swiperight', function(ev){
+//		a7-=speen;
+//		b7-=speen1;
+//		can7.clearRect(0,0,ca7.width,ca7.height);
+//		hid();
+//		add();
+//	});
+//	touch.on(bills, 'swipeleft', function(ev){
+//		a7+=speen;
+//		b7+=speen1;
+//		can7.clearRect(0,0,ca7.width,ca7.height);
+//		hid();
+//		reduce();
+//	});
+////	// 减少
+//	var img_num=-1;
+//	function reduce(){
+//		img_num++;
+//		console.log(img_num)
+//		imgs[0].style.webkitAnimation = "img1 0.5s linear";
+//		imgs[1].style.webkitAnimation = "img2 0.5s linear";
+//		if (imgs.length>1) {
+//			var timer=setTimeout(function(){
+//				bills.removeChild(imgs[0]);
+//				if (imgs.length>1) {
+//					bills.appendChild(imgarr[img_num]);
+//				}	
+//			},500)
+//		}
+//	}
 //	// 增加
-	function add(){
-		img_num--;
-		bills.removeChild(imgs[2]);
-		bills.insertBefore(imgarr[img_num],imgs[0]);
-	}
+//	function add(){
+//		img_num--;
+//		bills.removeChild(imgs[2]);
+//		bills.insertBefore(imgarr[img_num],imgs[0]);
+//	}
+	
+	
+	    var picsWrap = document.getElementById('picsWrap');
+		var pics = picsWrap.getElementsByTagName('img');
+		var len = pics.length;
+		//		alert(len)
+		var zuobiao = document.getElementById('zb_d');
+		var count = 0;
+		
+		for(var i = 0; i < len; i++) {
+			touch.on(pics[i], 'touchstart', function(ev) {
+				ev.preventDefault();
+			});
+		}
+		touch.on(picsWrap, "swipeleft", function(ev) {
+			if(count == 17) {
+				pics[17 - count].className = 'picOutEnd';
+				setTimeout(function() {
+					pics[17 - count].className = "";
+					count--;
+				}, 300)
+
+			} else {
+				pics[17 - count].className = 'picOut';
+				pics[17 - count-1].className = 'pre_2';
+				
+				count++;
+				zuobiao.style.bottom = -3 * count + 'vh';
+			}
+
+		})
+		touch.on(picsWrap, "swiperight", function(ev) {
+			if(count == 0) {
+				setTimeout(function() {
+					pics[17].className = '';
+				}, 100)
+			}else{
+				count--;
+				pics[17 - count].className = 'picBack';
+				zuobiao.style.bottom = -3 * count + 'vh';
+			}
+		})
+		
+		var liulan = document.getElementById("liulan");
+		var closePic = document.getElementById('closePic');
+		closePic.onclick =function(){
+			cover.style.display = 'block';
+			liulan.style.display='none';
+		}
+		var cover = document.getElementById('cover');
+		cover.onclick=function(){
+			cover.style.display = 'none';
+			liulan.style.display = 'block';
+		}
 
 //var div1 = document.getElementById("div1");
 //var imgs= div1.getElementsByTagName("img");

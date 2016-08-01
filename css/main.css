@@ -219,8 +219,117 @@
 /*第六页*/
 
 /*第七页*/
+#xlhb_con {
+  background: url(../img/bg_c1.png);
+}
+#xlhb_con #cover img {
+  position: absolute;
+  top: 19vh;
+  left: 15vw;
+  width: 68vw;
+  height: 60vh;
+}
+#xlhb_con #cover img:nth-of-type(1) {
+  transform: rotate(5deg);
+}
+#xlhb_con #cover img:nth-of-type(2) {
+  transform: rotate(10deg);
+}
+#xlhb_con #cover img:nth-of-type(3) {
+  transform: rotate(15deg);
+}
+#xlhb_con #liulan {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#xlhb_con #closePic {
+  position: absolute;
+  right: 13.252vw;
+  top: 12vh;
+  color: white;
+  font-size: 2.8vh;
+  z-index: 9;
+  border: 1px solid red;
+}
+#xlhb_con #zb_d {
+  position: absolute;
+  left: 1.252vw;
+  bottom: 0;
+  transition: all 0.9s;
+  z-index: 4;
+}
+#xlhb_con #picsWrap img {
+  position: absolute;
+  top: 17vh;
+  left: 19vw;
+  width: 64vw;
+  height: 62vh;
+  transition: all 1s;
+}
+#xlhb_con #picsWrap .pre_2 {
+  position: absolute;
+  top: 18vh;
+  left: 17vw;
+  width: 68vw;
+  height: 64vh;
+}
+#xlhb_con #picsWrap .pre_1 {
+  position: absolute;
+  top: 19vh;
+  left: 15vw;
+  width: 72vw;
+  height: 66vh;
+}
 
-.page7>#ca7{
+@keyframes picGoOut {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+@keyframes picGoOutEnd {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0deg);
+  }
+  50% {
+    transform-origin: right bottom;
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0deg);
+  }
+}
+@keyframes picComeBack {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+.picOut {
+  animation: picGoOut 0.5s 1 forwards;
+}
+.picOutEnd {
+  position: absolute;
+  top: 19vh;
+  left: 15vw;
+  width: 72vw;
+  height: 66vh;
+  animation: picGoOutEnd 0.5s linear;
+}
+.picBack {
+  animation: picComeBack 0.5s linear forwards;
+}
+
+/*.page7>#ca7{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -310,7 +419,7 @@
 }
 .page7>.dele>img{
 	width: 100%;
-}
+}*/
 
 
 
